@@ -1,4 +1,4 @@
-package com.example.crystal;
+package com.crystal;
 
 import java.awt.Dimension;
 import java.awt.Graphics2D;
@@ -9,15 +9,18 @@ import net.runelite.client.ui.overlay.OverlayLayer;
 import net.runelite.client.ui.overlay.OverlayPosition;
 import net.runelite.client.ui.overlay.outline.ModelOutlineRenderer;
 
-public class CrystalExtractorOverlay extends Overlay
-{
+public class CrystalExtractorOverlay extends Overlay {
+
     private final CrystalExtractorPlugin plugin;
     private final CrystalExtractorConfig config;
     private final ModelOutlineRenderer outlineRenderer;
 
     @Inject
-    CrystalExtractorOverlay(CrystalExtractorPlugin plugin, CrystalExtractorConfig config, ModelOutlineRenderer outlineRenderer)
-    {
+    CrystalExtractorOverlay(
+        CrystalExtractorPlugin plugin,
+        CrystalExtractorConfig config,
+        ModelOutlineRenderer outlineRenderer
+    ) {
         this.plugin = plugin;
         this.config = config;
         this.outlineRenderer = outlineRenderer;
@@ -26,16 +29,13 @@ public class CrystalExtractorOverlay extends Overlay
     }
 
     @Override
-    public Dimension render(Graphics2D graphics)
-    {
-        if (!plugin.isHighlightActive())
-        {
+    public Dimension render(Graphics2D graphics) {
+        if (!plugin.isHighlightActive()) {
             return null;
         }
 
         GameObject target = plugin.getTarget();
-        if (target == null)
-        {
+        if (target == null) {
             return null;
         }
 

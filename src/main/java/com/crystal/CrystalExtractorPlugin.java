@@ -1,4 +1,4 @@
-package com.example.crystal;
+package com.crystal;
 
 import com.google.inject.Provides;
 import javax.inject.Inject;
